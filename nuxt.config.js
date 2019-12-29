@@ -38,6 +38,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
+    "@nuxtjs/apollo",
   ],
   /*
   ** Build configuration
@@ -48,5 +49,15 @@ module.exports = {
     */
     extend (config, ctx) {
     }
-  }
+  },
+  
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: `http://localhost:3000/graphql`,
+        browserHttpEndpoint: `/graphql`,
+      },
+    },
+  },
+
 }

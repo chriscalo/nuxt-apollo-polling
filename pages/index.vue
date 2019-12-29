@@ -8,6 +8,9 @@
       <h2 class="subtitle">
         repro for polling bug in @nuxtjs/apollo
       </h2>
+      <p>
+        user = {{ user }}
+      </p>
       <div class="links">
         <a
           href="https://nuxtjs.org/"
@@ -30,8 +33,15 @@
 
 <script>
 import Logo from '~/components/Logo.vue'
+import { User } from '~/queries/auth.graphql'
 
 export default {
+  apollo: {
+    user: {
+      query: User,
+      prefetch: true,
+    },
+  },
   components: {
     Logo
   }
