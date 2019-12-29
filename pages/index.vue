@@ -40,6 +40,7 @@ export default {
     user: {
       query: User,
       prefetch: true,
+      pollInterval: 1000,
     },
   },
   components: {
